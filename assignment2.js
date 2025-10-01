@@ -244,8 +244,8 @@ function draw() {
 	);
 
 	// eye and target
-	var eye = [0 + panX, 5, 5 + panZ];		//Pan eye and target according to variables
-	var target = [0 + panX, 0, 0 + panZ];
+	var eye = [0 - panX, 5, 5 - panZ];		//Pan eye and target according to variables
+	var target = [0 - panX, 0, 0 - panZ];
 
 	// setup viewing matrix
 	var eyeToTarget = subtract(target, eye);
@@ -262,7 +262,7 @@ function draw() {
 	gl.disable(gl.CULL_FACE);
 
 	gl.clearColor(0.2, 0.2, 0.2, 1);
-	gl.clear(gl.COLOR_BUFFER_BIT);
+	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
 	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 	gl.useProgram(program);
