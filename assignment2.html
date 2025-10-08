@@ -34,9 +34,12 @@
 <body>
     <script src="assignment2.js" type="module"></script>
 
+    <!-- Dragging the image loaded in the canva with left click of mouse should rotate over Y axis,
+     while dragging with right click should rotate over XZ, and using scrollwheel should zoom-->
     <canvas id="glcanvas"></canvas>
     <div id="config">
         <table>
+            <!--   
             <tr>
                 <td>Y Rotation</td>
                 <td><input id="rotation" type="range" min="0" max="360" value="0">
@@ -48,11 +51,28 @@
                 <td><input value="0" id="scale" type="range" min="0" max="200" value="0">
                 </td>
             </tr>
+            -->
+            
+
+            <tr>
+                <td>Projection type</td>
+                <td><select id="projection" name="projection_type">
+                    <option value="perspective">Perspective</option>
+                    <option value="orthographic">Orthographic</option>
+                    </select>
+                </td>
+            </tr>
 
 
             <tr>
                 <td>height</td>
-                <td><input value="50" id="height" type="range" min="0" max="100" value="0">
+                <td><input value="50" id="height" type="range" min="0" max="100" oninput="changeHeightScale()">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center" colspan="2">Wireframe
+                <input id="checkBox" type="checkbox" onchange="wireframeChange()">
                 </td>
             </tr>
 
